@@ -1,0 +1,247 @@
+:root {
+  --header-height: 3rem;
+  --nav-width: 68px;
+  --first-color: #fff;
+  --first-color-light: #afa5d9;
+  --black-color: #000;
+  --body-font: "Nunito", sans-serif;
+  --normal-font-size: 1rem;
+  --z-fixed: 100;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+#header {
+  height: 70px;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+  box-shadow: 0 4px 18px 0px rgb(0 0 0 / 12%), 0 7px 10px -5px rgb(0 0 0 / 15%);
+  z-index: 10;
+  transition: 0.5s;
+}
+
+#side-menu {
+  height: 100vh;
+  transition: 0.5s;
+  padding: 10px;
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 0;
+  backdrop-filter: blur(5px);
+  top: 0;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-width: 10px;
+  max-width: 75px;
+  background-color: white;
+  overflow: hidden;
+  .content {
+    opacity: 0;
+    animation-name: start;
+    animation-duration: 0.5s;
+  }
+  .mat-expansion-panel-header {
+    padding-right: 0;
+  }
+  &:hover {
+    overflow-y: auto;
+    min-width: 300px;
+    .content {
+      opacity: 1;
+    }
+    .mat-expansion-panel-header {
+      padding-right: 24px;
+    }
+  }
+  .menu-head {
+    // padding: 10px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.user-name {
+  height: 70px;
+  width: 100%;
+  padding: 10px 0px 10px 7px;
+  align-items: center;
+  display: flex;
+}
+
+.demo-bg {
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.nav {
+  padding: 8px;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-menu-head {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  font-size: 8px;
+  line-height: 8px;
+  padding: 10px;
+  img {
+    width: 30px;
+  }
+}
+
+.nav-link {
+  border-radius: 3px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-transform: capitalize;
+  font-size: 16px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  &:hover {
+    width: 100% !important;
+    background-color: rgba(200, 200, 200, 0.2);
+    cursor: pointer;
+  }
+  a {
+    color: #3c4858;
+    text-decoration: none;
+  }
+}
+
+.mat-nav-link {
+  border-radius: 3px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-transform: capitalize;
+  font-size: 16px;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  &:hover {
+    background-color: rgba(200, 200, 200, 0.2);
+    cursor: pointer;
+  }
+  a {
+    color: #3c4858;
+    text-decoration: none;
+  }
+}
+
+.nested-nav-link {
+  border-radius: 3px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-transform: capitalize;
+  font-size: 16px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  &:hover {
+    width: 100% !important;
+    background-color: rgba(200, 200, 200, 0.2);
+    cursor: pointer;
+  }
+  a {
+    color: #3c4858;
+    text-decoration: none;
+  }
+}
+
+.nav-link-active {
+  border-radius: 3px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-transform: capitalize;
+  font-size: 16px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: rgba(200, 200, 200, 0.2);
+  a {
+    color: #3c4858;
+    text-decoration: none;
+  }
+}
+
+.left-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+@keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.user-img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.nested-icon {
+  font-size: 18px;
+}
+
+.mat-expansion-panel {
+  background-color: transparent;
+  box-shadow: none;
+  padding-left: 0 !important;
+  padding-right: 0;
+}
+
+.mat-expansion-panel-header {
+  padding-left: 0;
+}

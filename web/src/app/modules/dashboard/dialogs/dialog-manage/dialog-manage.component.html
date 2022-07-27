@@ -1,0 +1,81 @@
+<div mat-dialog-title>
+  <div class="d-flex justify-content-between align-items-center">
+    <div>ADD INVENTORY COUNT</div>
+    <div mat-dialog-close>
+      <span class="input-group-text">
+        <i class="material-icons">close</i>
+      </span>
+    </div>
+  </div>
+</div>
+<mat-divider></mat-divider>
+
+<mat-dialog-content style="padding: 2em 2em 0em 2em">
+  <div class="row">
+    <div class="col-md-3">
+      <app-label [label]="'# Inventory'"></app-label>
+    </div>
+    <div class="col-md-5">
+      <app-input
+        [placeholder]="'# Inventory'"
+        [value]="dialogData.NB_INV_COUNTS ?? ''"
+        (callBack)="dialogData.NB_INV_COUNTS = $event"
+      ></app-input>
+    </div>
+    <div class="col-md-2">
+      <app-toggle
+        [checked]="dialogData?.ACTIF ?? true"
+        (callBack)="dialogData.ACTIF = $event ; "
+      ></app-toggle>
+    </div>
+    <div class="col-md-2">
+      <app-label [label]="'Active'"></app-label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"><app-label [label]="'Site'"></app-label></div>
+    <div class="col-md-9">
+      <app-mutli-select
+        [options]="sites"
+        displayValue="DESCRIPTION_ENG"
+        [selectedValue]="selectedValue || {}"
+        (selected)="dialogData.SITE = $event.CODE"
+      ></app-mutli-select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"><app-label [label]="'Description'"></app-label></div>
+    <div class="col-md-9">
+      <app-textarea
+        [placeholder]="'Description'"
+        [value]="dialogData.DESCRIPTION ?? ''"
+        (callBack)="dialogData.DESCRIPTION = $event"
+        [wordLimit]="wordLimit"
+        [maxlength]="wordLimit"
+      ></app-textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"><app-label [label]="'Start Date'"></app-label></div>
+    <div class="col-md-9">
+      <app-date-input
+        placeholder="Start Date"
+        [value]="dialogData?.START_DATE ?? ''"
+      ></app-date-input>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+
+<mat-dialog-actions class="d-flex flex-row-reverse">
+  <app-button
+    class="m-l-5"
+    (callBack)="close()"
+    [button]="buttons[0]"
+  ></app-button>
+  <app-button
+    class="m-l-5"
+    (callBack)="save()"
+    [button]="buttons[1]"
+  ></app-button>
+</mat-dialog-actions>

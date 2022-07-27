@@ -1,0 +1,12 @@
+<div class="d-flex">
+  <div *ngIf="beforeCheckbox">{{ beforeCheckbox }}</div>
+  <mat-checkbox
+    id="{{ id }}"
+    type="checkbox"
+    [checked]="value"
+    (change)="changed()"
+    value="{{ value }}"
+    [disabled]="disabled"
+    >{{ afterCheckbox }}</mat-checkbox
+  >
+</div>

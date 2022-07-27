@@ -1,0 +1,71 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-success card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons"></i>
+            </div>
+            <h4 class="card-title">Management</h4>
+          </div>
+          <div class="card-body">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-2">
+                <app-checkbox
+                  (callBack)="showAll = $event; tableHeader = []; getData()"
+                  [afterCheckbox]="'Show all'"
+                ></app-checkbox>
+              </div>
+              <div class="col-md-4">
+                <div class="row d-flex align-items-center">
+                  <div class="col-md-4">
+                    <app-label
+                      class="text-center-c"
+                      [label]="'From'"
+                    ></app-label>
+                  </div>
+                  <div class="col-md-8">
+                    <app-date-input
+                      (callBack)="
+                        fromDate = $event; tableHeader = []; getData()
+                      "
+                      [value]="fromDate"
+                    ></app-date-input>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row d-flex align-items-center">
+                  <div class="col-md-4">
+                    <app-label class="text-center-c" [label]="'To'"></app-label>
+                  </div>
+                  <div class="col-md-8">
+                    <app-date-input
+                      (callBack)="toDate = $event; tableHeader = []; getData()"
+                      [value]="toDate"
+                    ></app-date-input>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <app-button
+                  [button]="buttons[0]"
+                  (callBack)="openDialog()"
+                ></app-button>
+              </div>
+            </div>
+            <app-table
+              class="m-2"
+              [tableData]="tableData"
+              (searchCallback)="searchCallback($event)"
+              (tableCallback)="tableCallback($event)"
+            ></app-table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+  </div>
+</div>

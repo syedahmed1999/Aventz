@@ -6,7 +6,6 @@ import {
   MatSnackBar,
 } from '@angular/material/snack-bar';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { TokenValidity } from '../models/tokenValidity.interface';
 import { AppConstants } from '../utilities/app-constants';
 
 @Injectable({
@@ -43,7 +42,4 @@ export class SharedService {
     this.loaderShow.next(false);
   }
 
-  isTokenValid(): Observable<TokenValidity> {
-    return this.http.get<TokenValidity>(`${AppConstants.baseUrl}/IsTokenValid`);
-  }
 }

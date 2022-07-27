@@ -16,17 +16,10 @@
       <app-label [label]="'# Inventory'"></app-label>
     </div>
     <div class="col-md-5">
-      <app-input
-        [placeholder]="'# Inventory'"
-        [value]="dialogData.NB_INV_COUNTS ?? ''"
-        (callBack)="dialogData.NB_INV_COUNTS = $event"
-      ></app-input>
+      <app-input [placeholder]="'# Inventory'"></app-input>
     </div>
     <div class="col-md-2">
-      <app-toggle
-        [checked]="dialogData?.ACTIF ?? true"
-        (callBack)="dialogData.ACTIF = $event ; "
-      ></app-toggle>
+      <app-toggle></app-toggle>
     </div>
     <div class="col-md-2">
       <app-label [label]="'Active'"></app-label>
@@ -35,12 +28,7 @@
   <div class="row">
     <div class="col-md-3"><app-label [label]="'Site'"></app-label></div>
     <div class="col-md-9">
-      <app-mutli-select
-        [options]="sites"
-        displayValue="DESCRIPTION_ENG"
-        [selectedValue]="selectedValue || {}"
-        (selected)="dialogData.SITE = $event.CODE"
-      ></app-mutli-select>
+      <app-mutli-select></app-mutli-select>
     </div>
   </div>
   <div class="row">
@@ -48,8 +36,6 @@
     <div class="col-md-9">
       <app-textarea
         [placeholder]="'Description'"
-        [value]="dialogData.DESCRIPTION ?? ''"
-        (callBack)="dialogData.DESCRIPTION = $event"
         [wordLimit]="wordLimit"
         [maxlength]="wordLimit"
       ></app-textarea>
@@ -58,10 +44,7 @@
   <div class="row">
     <div class="col-md-3"><app-label [label]="'Start Date'"></app-label></div>
     <div class="col-md-9">
-      <app-date-input
-        placeholder="Start Date"
-        [value]="dialogData?.START_DATE ?? ''"
-      ></app-date-input>
+      <app-date-input placeholder="Start Date"></app-date-input>
     </div>
   </div>
 </mat-dialog-content>
@@ -73,9 +56,5 @@
     (callBack)="close()"
     [button]="buttons[0]"
   ></app-button>
-  <app-button
-    class="m-l-5"
-    (callBack)="save()"
-    [button]="buttons[1]"
-  ></app-button>
+  <app-button class="m-l-5" [button]="buttons[1]"></app-button>
 </mat-dialog-actions>

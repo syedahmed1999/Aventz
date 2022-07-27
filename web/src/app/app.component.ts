@@ -11,8 +11,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import Dexie from 'dexie';
 import { SharedService } from './shared/services/shared.service';
 import { BaseComponent } from './shared/components/base/base.component';
-import { TokenValidity } from './shared/models/tokenValidity.interface';
-import { AppConstants } from './shared/utilities/app-constants';
+
 @Component({
   selector: 'app-my-app',
   templateUrl: './app.component.html',
@@ -32,18 +31,6 @@ export class AppComponent
   ) {
     super();
     this.getUpdate();
-  }
-
-  checkIfTokenValid(): void {
-    const sub: Subscription = this.sharedService
-      .isTokenValid()
-      .subscribe((res: TokenValidity) => {
-        if (!res.Succeed) {
-          localStorage.clear();
-          this.navigate(AppConstants.AUTH_LOGIN);
-        }
-      });
-    this.subs.push(sub);
   }
 
   ngAfterContentChecked(): void {
@@ -71,7 +58,6 @@ export class AppComponent
 
   ngOnInit(): void {
     this.watchLoader();
-    this.checkIfTokenValid();
   }
 
   watchLoader(): void {

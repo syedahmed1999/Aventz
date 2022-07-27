@@ -13,7 +13,7 @@
             <div class="row d-flex align-items-center">
               <div class="col-md-2">
                 <app-checkbox
-                  (callBack)="showAll = $event; tableHeader = []; getData()"
+                  (callBack)="showAll = $event"
                   [afterCheckbox]="'Show all'"
                 ></app-checkbox>
               </div>
@@ -27,9 +27,7 @@
                   </div>
                   <div class="col-md-8">
                     <app-date-input
-                      (callBack)="
-                        fromDate = $event; tableHeader = []; getData()
-                      "
+                      (callBack)="fromDate = $event"
                       [value]="fromDate"
                     ></app-date-input>
                   </div>
@@ -42,25 +40,16 @@
                   </div>
                   <div class="col-md-8">
                     <app-date-input
-                      (callBack)="toDate = $event; tableHeader = []; getData()"
+                      (callBack)="toDate = $event"
                       [value]="toDate"
                     ></app-date-input>
                   </div>
                 </div>
               </div>
               <div class="col-md-2">
-                <app-button
-                  [button]="buttons[0]"
-                  (callBack)="openDialog()"
-                ></app-button>
+                <app-button [button]="buttons[0]"></app-button>
               </div>
             </div>
-            <app-table
-              class="m-2"
-              [tableData]="tableData"
-              (searchCallback)="searchCallback($event)"
-              (tableCallback)="tableCallback($event)"
-            ></app-table>
           </div>
         </div>
       </div>

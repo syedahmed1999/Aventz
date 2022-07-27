@@ -21,20 +21,16 @@
                   [login]="true"
                   [icon]="'face'"
                   [placeholder]="'Username'"
-                  (callBack)="userObj.userName = $event"
                 ></app-input>
                 <app-input
                   [login]="true"
                   [icon]="'lock_outline'"
                   [placeholder]="'Password'"
                   [type]="'password'"
-                  (callBack)="userObj.password = $event"
                 ></app-input>
               </div>
               <div class="card-footer justify-content-center">
-                <a class="btn btn-rose btn-link btn-lg" (click)="validate()"
-                  >Lets Go</a
-                >
+                <a class="btn btn-rose btn-link btn-lg">Lets Go</a>
               </div>
             </div>
           </form>

@@ -38,6 +38,9 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { SharedService } from './services/shared.service';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RInputComponent } from './components/r-input/r-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -57,6 +60,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatAutocompleteModule,
     MatButtonToggleModule,
     MatCheckboxModule,
@@ -97,12 +101,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTableModule,
     FooterComponent,
     NavbarComponent,
-
-    FooterComponent,
-    NavbarComponent,
-    SidebarComponent,
     ButtonComponent,
-    MatSlideToggleModule,
+
     InputComponent,
     LabelComponent,
     MutliSelectComponent,
@@ -112,6 +112,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     TextareaComponent,
     TableComponent,
     MatTableComponent,
+    MatSlideToggleModule,
+    SidebarComponent,
   ],
 })
 export class SharedModule {

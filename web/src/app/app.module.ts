@@ -11,13 +11,13 @@ import { UserLayoutComponent } from './layouts/user-layout/user-layout.component
 import { GuestLayoutComponent } from './layouts/guest-layout/guest-layout.component';
 import { NotFoundComponent } from './layouts/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
-
 import { AuthModule } from './modules/auth/auth.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/interceptor/auth.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   imports: [
@@ -35,6 +35,7 @@ import { RouterModule } from '@angular/router';
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    StoreModule.forRoot({}, {}),
   ],
   declarations: [
     AppComponent,

@@ -4,7 +4,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { GuestLayoutComponent } from './layouts/guest-layout/guest-layout.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
-import { NotFoundComponent } from './modules/not-found/not-found.component';
+import { NotFoundComponent } from './layouts/not-found/not-found.component';
 
 const routes: Routes = [
   {

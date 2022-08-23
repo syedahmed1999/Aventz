@@ -24,11 +24,11 @@ const routes: Routes = [
     ],
   },
   {
-    path: '',
+    path: 'admin',
     component: AdminLayoutComponent,
   },
   {
-    path: '',
+    path: 'guest',
     component: GuestLayoutComponent,
   },
   {

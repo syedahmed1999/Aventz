@@ -5,6 +5,10 @@ export interface APIError extends Error {
   isOperational?: boolean | undefined;
 }
 
+export interface User {
+  
+}
+
 export interface Mortgage extends Document {
   loanNo: string;
   type: string;
